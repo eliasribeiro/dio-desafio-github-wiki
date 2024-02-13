@@ -8,8 +8,8 @@ export default function ItemRepo({ repo, onRemove }) {
             <p>{repo.full_name}
             </p>
             <div className='options'>
-                <a href={repo.html_url} target='_blank'>Ver repositório</a>
-                <a href="#" onClick={onRemove} className='remover'>Remover</a>
+                <a href={repo.html_url} target='_blank' rel="noreferrer">Ver repositório</a>
+                <a href="/#" onClick={onRemove} className='remover'>Remover</a>
             </div>
 
         </ItemContainer>

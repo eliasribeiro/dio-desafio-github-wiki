@@ -19,7 +19,7 @@ function App() {
 
     await api.get(`repos/${currentRepo}`)
       .then(function (response) {
-        const isExist = repositories.find(repo => repo.id == response.data.id);
+        const isExist = repositories.find(repo => repo.id === response.data.id);
         if (!isExist) {
           setRepositories(prev => [...prev, response.data]);
           setCurrentRepo('');
@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <img width={72} height={72} src={github} />
+        <img width={72} height={72} src={github} alt="logo do github" />
         <Input value={currentRepo} onChange={e => setCurrentRepo(e.target.value)} />
         <Button onClick={handleSearchRepo} />
         {repositories.map(repo => <ItemRepo repo={repo} onRemove={e => { handleRemoverRepo(repo.id); e.preventDefault(); }} />)}
